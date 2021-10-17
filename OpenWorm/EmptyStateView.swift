@@ -21,7 +21,8 @@ class EmptyStateView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        configure()
+        configureContainer()
+        configureImageView()
     }
     
     required init?(coder: NSCoder) {
@@ -33,7 +34,7 @@ class EmptyStateView: UIView {
         messageLabel.text = vm.message
     }
     
-    private func configure() {
+    private func configureContainer() {
         let container = UIStackView(arrangedSubviews: [imageView, titleLabel, messageLabel])
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
@@ -50,9 +51,10 @@ class EmptyStateView: UIView {
         ])
         
         container.setCustomSpacing(40, after: imageView)
-        
+    }
+    
+    private func configureImageView() {
         imageView.contentMode = .scaleAspectFit
-        
         imageView.image = UIImage(named: "openworm-logo")
     }
 
