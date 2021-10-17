@@ -11,6 +11,7 @@
 		CD5DB889271BF9A300C15025 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB888271BF9A300C15025 /* SceneDelegate.swift */; };
 		CD5DB890271BF9A600C15025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD5DB88F271BF9A600C15025 /* Assets.xcassets */; };
 		CD5DB893271BF9A600C15025 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD5DB891271BF9A600C15025 /* LaunchScreen.storyboard */; };
+		CD5DB89B271CA12400C15025 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB89A271CA12400C15025 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		CD5DB88F271BF9A600C15025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD5DB892271BF9A600C15025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD5DB894271BF9A600C15025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD5DB89A271CA12400C15025 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				CD5DB886271BF9A300C15025 /* AppDelegate.swift */,
 				CD5DB888271BF9A300C15025 /* SceneDelegate.swift */,
+				CD5DB89A271CA12400C15025 /* SearchViewController.swift */,
 				CD5DB88F271BF9A600C15025 /* Assets.xcassets */,
 				CD5DB891271BF9A600C15025 /* LaunchScreen.storyboard */,
 				CD5DB894271BF9A600C15025 /* Info.plist */,
@@ -130,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD5DB89B271CA12400C15025 /* SearchViewController.swift in Sources */,
 				CD5DB887271BF9A300C15025 /* AppDelegate.swift in Sources */,
 				CD5DB889271BF9A300C15025 /* SceneDelegate.swift in Sources */,
 			);
