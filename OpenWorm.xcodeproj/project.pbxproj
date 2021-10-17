@@ -74,24 +74,64 @@
 		CD5DB885271BF9A300C15025 /* OpenWorm */ = {
 			isa = PBXGroup;
 			children = (
+				CD5DB8B4271CE79F00C15025 /* Model */,
+				CD5DB8B3271CE78400C15025 /* Extensions */,
+				CD5DB8B2271CE6CD00C15025 /* Networking */,
+				CD5DB8B1271CE6A400C15025 /* Views */,
+				CD5DB8B0271CE69B00C15025 /* Screens */,
 				CD5DB886271BF9A300C15025 /* AppDelegate.swift */,
 				CD5DB888271BF9A300C15025 /* SceneDelegate.swift */,
-				CD5DB89A271CA12400C15025 /* SearchViewController.swift */,
-				CD5DB89C271CAAC000C15025 /* EmptyStateView.swift */,
-				CD5DB89E271CAEDE00C15025 /* TitleLabel.swift */,
-				CD5DB8A0271CAFF500C15025 /* BodyLabel.swift */,
-				CD5DB8A4271CD9ED00C15025 /* Book.swift */,
-				CD5DB8A2271CC8B800C15025 /* OpenLibraryClient.swift */,
-				CD5DB8A8271CDB2700C15025 /* APIConstant.swift */,
-				CD5DB8A6271CDAF700C15025 /* APIEndPoint.swift */,
-				CD5DB8AC271CDEDE00C15025 /* SearchEndpoint.swift */,
-				CD5DB8AA271CDB4700C15025 /* NetworkingError.swift */,
-				CD5DB8AE271CE30000C15025 /* UIViewController+Ext.swift */,
 				CD5DB88F271BF9A600C15025 /* Assets.xcassets */,
 				CD5DB891271BF9A600C15025 /* LaunchScreen.storyboard */,
 				CD5DB894271BF9A600C15025 /* Info.plist */,
 			);
 			path = OpenWorm;
+			sourceTree = "<group>";
+		};
+		CD5DB8B0271CE69B00C15025 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CD5DB89A271CA12400C15025 /* SearchViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CD5DB8B1271CE6A400C15025 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD5DB89C271CAAC000C15025 /* EmptyStateView.swift */,
+				CD5DB89E271CAEDE00C15025 /* TitleLabel.swift */,
+				CD5DB8A0271CAFF500C15025 /* BodyLabel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CD5DB8B2271CE6CD00C15025 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CD5DB8A2271CC8B800C15025 /* OpenLibraryClient.swift */,
+				CD5DB8A8271CDB2700C15025 /* APIConstant.swift */,
+				CD5DB8A6271CDAF700C15025 /* APIEndPoint.swift */,
+				CD5DB8AC271CDEDE00C15025 /* SearchEndpoint.swift */,
+				CD5DB8AA271CDB4700C15025 /* NetworkingError.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CD5DB8B3271CE78400C15025 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD5DB8AE271CE30000C15025 /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CD5DB8B4271CE79F00C15025 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD5DB8A4271CD9ED00C15025 /* Book.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -8,5 +8,5 @@
 import Foundation
 
 enum APIConstant {
-    static let baseURL = "https://openlibrary.org"
+    static let baseURL = "https://openlibrary.org fwe68t"
 }

@@ -16,12 +16,9 @@ class SearchViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         
-        #warning("TODO: query OpenLibrary")
         #warning("TODO: loading state")
         #warning("TODO: display content in collection view (see assignment for details)")
         #warning("TODO: empty state when no content")
-        #warning("TODO: search on button tap to avoid spamming the API -> search bar delegate")
-        #warning("TODO: display error to user")
         
         configureEmptyStateView()
         configureSearchController()
