@@ -35,7 +35,9 @@ class SearchViewController: UIViewController {
                 print(response.docs)
                 
             case .failure(let error):
-                print(error)
+                DispatchQueue.main.async {
+                    self.present(error: error)
+                }
             }
         }
     }
