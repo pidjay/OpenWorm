@@ -21,9 +21,23 @@ class SearchViewController: UIViewController {
         #warning("TODO: display content in collection view (see assignment for details)")
         #warning("TODO: empty state when no content")
         #warning("TODO: search on button tap to avoid spamming the API -> search bar delegate")
+        #warning("TODO: display error to user")
         
         configureEmptyStateView()
         configureSearchController()
+    }
+    
+    private func searchBook(_ query: String) {
+        let endpoint = SearchEndpoint.query(query)
+        OpenLibraryClient().fetch(endpoint, into: Book.Response.self) { result in
+            switch result {
+            case .success(let response):
+                print(response.docs)
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     private func configureEmptyStateView() {
@@ -46,8 +60,17 @@ class SearchViewController: UIViewController {
     
     private func configureSearchController() {
         let searchController = UISearchController()
+        searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Search for books..."
         navigationItem.searchController = searchController
     }
 
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let query = searchBar.text else { return }
+        searchBook(query)
+    }
 }
