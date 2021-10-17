@@ -15,6 +15,10 @@
 		CD5DB89D271CAAC000C15025 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB89C271CAAC000C15025 /* EmptyStateView.swift */; };
 		CD5DB89F271CAEDE00C15025 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB89E271CAEDE00C15025 /* TitleLabel.swift */; };
 		CD5DB8A1271CAFF500C15025 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8A0271CAFF500C15025 /* BodyLabel.swift */; };
+		CD5DB8A3271CC8B800C15025 /* OpenLibraryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8A2271CC8B800C15025 /* OpenLibraryClient.swift */; };
+		CD5DB8A7271CDAF700C15025 /* APIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8A6271CDAF700C15025 /* APIEndPoint.swift */; };
+		CD5DB8A9271CDB2700C15025 /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8A8271CDB2700C15025 /* APIConstant.swift */; };
+		CD5DB8AB271CDB4700C15025 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8AA271CDB4700C15025 /* NetworkingError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		CD5DB89C271CAAC000C15025 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		CD5DB89E271CAEDE00C15025 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		CD5DB8A0271CAFF500C15025 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
+		CD5DB8A2271CC8B800C15025 /* OpenLibraryClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryClient.swift; sourceTree = "<group>"; };
+		CD5DB8A6271CDAF700C15025 /* APIEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoint.swift; sourceTree = "<group>"; };
+		CD5DB8A8271CDB2700C15025 /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
+		CD5DB8AA271CDB4700C15025 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,10 @@
 				CD5DB89C271CAAC000C15025 /* EmptyStateView.swift */,
 				CD5DB89E271CAEDE00C15025 /* TitleLabel.swift */,
 				CD5DB8A0271CAFF500C15025 /* BodyLabel.swift */,
+				CD5DB8A2271CC8B800C15025 /* OpenLibraryClient.swift */,
+				CD5DB8A8271CDB2700C15025 /* APIConstant.swift */,
+				CD5DB8A6271CDAF700C15025 /* APIEndPoint.swift */,
+				CD5DB8AA271CDB4700C15025 /* NetworkingError.swift */,
 				CD5DB88F271BF9A600C15025 /* Assets.xcassets */,
 				CD5DB891271BF9A600C15025 /* LaunchScreen.storyboard */,
 				CD5DB894271BF9A600C15025 /* Info.plist */,
@@ -142,11 +154,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD5DB8A3271CC8B800C15025 /* OpenLibraryClient.swift in Sources */,
+				CD5DB8AB271CDB4700C15025 /* NetworkingError.swift in Sources */,
 				CD5DB8A1271CAFF500C15025 /* BodyLabel.swift in Sources */,
 				CD5DB89B271CA12400C15025 /* SearchViewController.swift in Sources */,
 				CD5DB887271BF9A300C15025 /* AppDelegate.swift in Sources */,
+				CD5DB8A7271CDAF700C15025 /* APIEndPoint.swift in Sources */,
 				CD5DB89D271CAAC000C15025 /* EmptyStateView.swift in Sources */,
 				CD5DB89F271CAEDE00C15025 /* TitleLabel.swift in Sources */,
+				CD5DB8A9271CDB2700C15025 /* APIConstant.swift in Sources */,
 				CD5DB889271BF9A300C15025 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
