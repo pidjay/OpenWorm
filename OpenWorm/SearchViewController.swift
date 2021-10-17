@@ -17,6 +17,7 @@ class SearchViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         configureEmptyStateView()
+        configureSearchController()
     }
     
     private func configureEmptyStateView() {
@@ -35,6 +36,12 @@ class SearchViewController: UIViewController {
             message: "Wormie is here to help you find books in the biggest library.\n\nStart your journey by tapping on the search bar."
         )
         emptyStateView.update(with: vm)
+    }
+    
+    private func configureSearchController() {
+        let searchController = UISearchController()
+        searchController.searchBar.placeholder = "Search for books..."
+        navigationItem.searchController = searchController
     }
 
 }
