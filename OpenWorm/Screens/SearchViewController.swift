@@ -131,6 +131,8 @@ class SearchViewController: UIViewController {
     private func configureCollectionView() {
         view.addSubview(collectionView)
         
+        collectionView.backgroundColor = .systemBackground
+        
         collectionView.dataSource = dataSource
         collectionView.register(BookCoverCell.self, forCellWithReuseIdentifier: BookCoverCell.reuseIdentifier)
         collectionView.register(BookSearchHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BookSearchHeaderView.reuseIdentifier)

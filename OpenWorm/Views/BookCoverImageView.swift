@@ -24,6 +24,9 @@ class BookCoverImageView: UIImageView {
     private func configure() {
         layer.cornerRadius = 12
         layer.cornerCurve = .continuous
+        layer.borderColor = UIColor.black.withAlphaComponent(0.1).cgColor
+        layer.borderWidth = 1
+        
         image = coverPlaceholder
         contentMode = .scaleAspectFill
         clipsToBounds = true
