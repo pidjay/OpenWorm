@@ -215,6 +215,7 @@ class SearchViewController: UIViewController {
         collectionView.backgroundColor = .systemBackground
         
         collectionView.dataSource = dataSource
+        collectionView.delegate = self
         collectionView.register(BookCoverCell.self, forCellWithReuseIdentifier: BookCoverCell.reuseIdentifier)
         collectionView.register(BookSearchHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BookSearchHeaderView.reuseIdentifier)
     }
@@ -237,5 +238,14 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         resetToWelcomeState()
+    }
+}
+
+extension SearchViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let book = dataSource.itemIdentifier(for: indexPath) else { return }
+        let destination = BookDetailViewController(bookKey: book.key)
+        show(destination, sender: self)
     }
 }

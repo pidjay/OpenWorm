@@ -27,6 +27,7 @@
 		CD5DB8BF271D0C7500C15025 /* BookSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8BE271D0C7500C15025 /* BookSearchHeaderView.swift */; };
 		CD5DB8C1271D3E6C00C15025 /* CaptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8C0271D3E6C00C15025 /* CaptionLabel.swift */; };
 		CD5DB8C3271D489900C15025 /* BookDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8C2271D489900C15025 /* BookDetail.swift */; };
+		CD5DB8C5271D49AC00C15025 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8C4271D49AB00C15025 /* BookDetailViewController.swift */; };
 		CD5DB8C7271D550C00C15025 /* BookDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8C6271D550C00C15025 /* BookDetailHeaderView.swift */; };
 		CD5DB8C9271D6B6600C15025 /* BookEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8C8271D6B6500C15025 /* BookEndpoint.swift */; };
 		CD5DB8CB271D6C6B00C15025 /* LargeTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8CA271D6C6B00C15025 /* LargeTitleLabel.swift */; };
@@ -57,6 +58,7 @@
 		CD5DB8BE271D0C7500C15025 /* BookSearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchHeaderView.swift; sourceTree = "<group>"; };
 		CD5DB8C0271D3E6C00C15025 /* CaptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionLabel.swift; sourceTree = "<group>"; };
 		CD5DB8C2271D489900C15025 /* BookDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetail.swift; sourceTree = "<group>"; };
+		CD5DB8C4271D49AB00C15025 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		CD5DB8C6271D550C00C15025 /* BookDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailHeaderView.swift; sourceTree = "<group>"; };
 		CD5DB8C8271D6B6500C15025 /* BookEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEndpoint.swift; sourceTree = "<group>"; };
 		CD5DB8CA271D6C6B00C15025 /* LargeTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTitleLabel.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				CD5DB89A271CA12400C15025 /* SearchViewController.swift */,
+				CD5DB8C4271D49AB00C15025 /* BookDetailViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				CD5DB8A7271CDAF700C15025 /* APIEndPoint.swift in Sources */,
 				CD5DB89D271CAAC000C15025 /* EmptyStateView.swift in Sources */,
 				CD5DB8C7271D550C00C15025 /* BookDetailHeaderView.swift in Sources */,
+				CD5DB8C5271D49AC00C15025 /* BookDetailViewController.swift in Sources */,
 				CD5DB89F271CAEDE00C15025 /* TitleLabel.swift in Sources */,
 				CD5DB8A9271CDB2700C15025 /* APIConstant.swift in Sources */,
 				CD5DB889271BF9A300C15025 /* SceneDelegate.swift in Sources */,
