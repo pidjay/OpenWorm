@@ -26,6 +26,7 @@
 		CD5DB8BD271CFDC200C15025 /* BookCoverImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8BC271CFDC200C15025 /* BookCoverImageView.swift */; };
 		CD5DB8BF271D0C7500C15025 /* BookSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8BE271D0C7500C15025 /* BookSearchHeaderView.swift */; };
 		CD5DB8C1271D3E6C00C15025 /* CaptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8C0271D3E6C00C15025 /* CaptionLabel.swift */; };
+		CD5DB8C9271D6B6600C15025 /* BookEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8C8271D6B6500C15025 /* BookEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		CD5DB8BC271CFDC200C15025 /* BookCoverImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverImageView.swift; sourceTree = "<group>"; };
 		CD5DB8BE271D0C7500C15025 /* BookSearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchHeaderView.swift; sourceTree = "<group>"; };
 		CD5DB8C0271D3E6C00C15025 /* CaptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionLabel.swift; sourceTree = "<group>"; };
+		CD5DB8C8271D6B6500C15025 /* BookEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				CD5DB8A8271CDB2700C15025 /* APIConstant.swift */,
 				CD5DB8A6271CDAF700C15025 /* APIEndPoint.swift */,
 				CD5DB8AC271CDEDE00C15025 /* SearchEndpoint.swift */,
+				CD5DB8C8271D6B6500C15025 /* BookEndpoint.swift */,
 				CD5DB8AA271CDB4700C15025 /* NetworkingError.swift */,
 			);
 			path = Networking;
@@ -220,6 +223,7 @@
 				CD5DB8AF271CE30000C15025 /* UIViewController+Ext.swift in Sources */,
 				CD5DB8A3271CC8B800C15025 /* OpenLibraryClient.swift in Sources */,
 				CD5DB8AD271CDEDE00C15025 /* SearchEndpoint.swift in Sources */,
+				CD5DB8C9271D6B6600C15025 /* BookEndpoint.swift in Sources */,
 				CD5DB8AB271CDB4700C15025 /* NetworkingError.swift in Sources */,
 				CD5DB8A1271CAFF500C15025 /* BodyLabel.swift in Sources */,
 				CD5DB8BB271CF22600C15025 /* BookCoverCell.swift in Sources */,
