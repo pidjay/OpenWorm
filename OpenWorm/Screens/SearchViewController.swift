@@ -10,6 +10,8 @@ import UIKit
 class SearchViewController: UIViewController {
     
     private let emptyStateView = EmptyStateView()
+    
+    private lazy var collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,7 @@ class SearchViewController: UIViewController {
         #warning("TODO: display content in collection view (see assignment for details)")
         #warning("TODO: empty state when no content")
         
+        configureCollectionView()
         configureEmptyStateView()
         configureSearchController()
     }
@@ -62,6 +65,39 @@ class SearchViewController: UIViewController {
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Search for books..."
         navigationItem.searchController = searchController
+    }
+    
+    private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
+        let inset: CGFloat = 8
+        
+        // Item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
+        
+        // Group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.42), heightDimension: .fractionalWidth(0.7))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        // Section
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: 0, bottom: inset, trailing: 0)
+        section.orthogonalScrollingBehavior = .groupPaging
+        
+        // Header
+        let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
+        let headerItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerItemSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        headerItem.pinToVisibleBounds = true
+        section.boundarySupplementaryItems = [headerItem]
+        
+        return UICollectionViewCompositionalLayout(section: section)
+    }
+    
+    private func configureCollectionView() {
+        view.addSubview(collectionView)
+        
+        collectionView.register(BookCoverCell.self, forCellWithReuseIdentifier: BookCoverCell.reuseIdentifier)
+        collectionView.register(BookSearchHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BookSearchHeaderView.reuseIdentifier)
     }
 
 }
