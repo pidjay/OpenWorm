@@ -42,6 +42,7 @@ class BookCoverCell: UICollectionViewCell {
     }
     
     func update(with vm: ViewModel) {
+        coverImageView.setImage(with: vm.coverURL)
         titleLabel.text = vm.title
         authorsLabel.text = vm.formattedAuthors
     }
