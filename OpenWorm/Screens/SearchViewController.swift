@@ -10,6 +10,7 @@ import UIKit
 class SearchViewController: UIViewController {
     
     private let emptyStateView = EmptyStateView()
+    private let loadingView = LoadingStateView()
     
     private lazy var collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
     private lazy var dataSource = SearchDataSource(collectionView: collectionView)
@@ -19,16 +20,18 @@ class SearchViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         
-        #warning("TODO: loading state")
-        
         configureCollectionView()
         configureEmptyStateView()
         configureSearchController()
     }
     
     private func searchBook(_ query: String) {
+        showLoadingView()
+        
         let endpoint = SearchEndpoint.query(query)
         OpenLibraryClient().fetch(endpoint, into: Book.Response.self) { result in
+            self.dismissLoadingView()
+            
             switch result {
             case .success(let response):
                 self.dataSource.update(with: response.docs)
@@ -129,6 +132,31 @@ class SearchViewController: UIViewController {
             title: "Welcome to OpenWorm",
             message: "Wormie is here to help you find books in the biggest library.\n\nStart your journey by tapping on the search bar."
         )
+    }
+    
+    private func showLoadingView() {
+        view.addSubview(loadingView)
+        
+        loadingView.frame = view.bounds
+        loadingView.alpha = 0
+        
+        UIView.animate(withDuration: 0.25, delay: 0, options: [.beginFromCurrentState]) {
+            self.loadingView.alpha = 0.8
+            self.emptyStateView.alpha = 0
+        }
+        
+        loadingView.startAnimating()
+    }
+    
+    private func dismissLoadingView() {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.25, delay: 0, options: [.beginFromCurrentState]) {
+                self.loadingView.alpha = 0
+                self.emptyStateView.alpha = 1
+            } completion: { _ in
+                self.loadingView.removeFromSuperview()
+            }
+        }
     }
 
 }

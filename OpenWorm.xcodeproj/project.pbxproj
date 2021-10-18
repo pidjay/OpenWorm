@@ -35,6 +35,7 @@
 		CD5DB8CF271D6D1700C15025 /* NSLayoutConstraint+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8CE271D6D1700C15025 /* NSLayoutConstraint+Ext.swift */; };
 		CD5DB8D1271D733600C15025 /* CoverEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8D0271D733600C15025 /* CoverEndpoint.swift */; };
 		CD5DB8D9271D7CC000C15025 /* SearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8D8271D7CC000C15025 /* SearchDataSource.swift */; };
+		CD5DB8DB271D7DC400C15025 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8DA271D7DC400C15025 /* LoadingStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		CD5DB8CE271D6D1700C15025 /* NSLayoutConstraint+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Ext.swift"; sourceTree = "<group>"; };
 		CD5DB8D0271D733600C15025 /* CoverEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverEndpoint.swift; sourceTree = "<group>"; };
 		CD5DB8D8271D7CC000C15025 /* SearchDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataSource.swift; sourceTree = "<group>"; };
+		CD5DB8DA271D7DC400C15025 /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				CD5DB8BC271CFDC200C15025 /* BookCoverImageView.swift */,
 				CD5DB8BE271D0C7500C15025 /* BookSearchHeaderView.swift */,
 				CD5DB8C6271D550C00C15025 /* BookDetailHeaderView.swift */,
+				CD5DB8DA271D7DC400C15025 /* LoadingStateView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				CD5DB8BD271CFDC200C15025 /* BookCoverImageView.swift in Sources */,
 				CD5DB8BF271D0C7500C15025 /* BookSearchHeaderView.swift in Sources */,
 				CD5DB8A7271CDAF700C15025 /* APIEndPoint.swift in Sources */,
+				CD5DB8DB271D7DC400C15025 /* LoadingStateView.swift in Sources */,
 				CD5DB89D271CAAC000C15025 /* EmptyStateView.swift in Sources */,
 				CD5DB8D1271D733600C15025 /* CoverEndpoint.swift in Sources */,
 				CD5DB8C7271D550C00C15025 /* BookDetailHeaderView.swift in Sources */,
