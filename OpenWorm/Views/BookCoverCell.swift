@@ -16,7 +16,7 @@ class BookCoverCell: UICollectionViewCell {
         
         var coverURL: URL? {
             guard let isbn = isbn else { return nil }
-            return URL(string: "\(APIConstant.coverBaseURL)/isbn/\(isbn)-M.jpg")
+            return CoverEndpoint.isbn(isbn, .medium).url
         }
         
         var formattedAuthors: String {

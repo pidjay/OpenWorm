@@ -20,7 +20,7 @@ class BookDetailHeaderView: UIView {
             // A possible workaround would be to pass the ISBN from the search screen.
             
             guard let coverId = detail.covers?.first else { return nil }
-            return URL(string: "\(APIConstant.coverBaseURL)/id/\(coverId)-M.jpg")
+            return CoverEndpoint.id(coverId, .medium).url
         }
         
         var bookTitle: String {
