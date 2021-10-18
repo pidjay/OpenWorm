@@ -178,7 +178,7 @@ class SearchViewController: UIViewController {
         item.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
         
         // Group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.42), heightDimension: .fractionalWidth(0.7))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.42), heightDimension: .fractionalWidth(0.8))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         // Section
@@ -198,7 +198,7 @@ class SearchViewController: UIViewController {
     private func createDataSource() -> UICollectionViewDiffableDataSource<Section, Book> {
         let dataSource = UICollectionViewDiffableDataSource<Section, Book>(collectionView: collectionView, cellProvider: { collectionView, indexPath, book in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCoverCell.reuseIdentifier, for: indexPath) as! BookCoverCell
-            cell.update(with: .init(title: book.title))
+            cell.update(with: .init(title: book.title, isbn: book.ISBNs?.first, authors: book.authorNames))
             return cell
         })
         dataSource.supplementaryViewProvider = { [unowned self] collectionView, kind, indexPath in
