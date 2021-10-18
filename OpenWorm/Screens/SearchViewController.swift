@@ -9,34 +9,10 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    enum Section: CaseIterable {
-        case a2f
-        case g2o
-        case p2z
-        case noAuthor
-        
-        var title: String {
-            switch self {
-            case .a2f:
-                return "A – F"
-            case .g2o:
-                return "G – O"
-            case .p2z:
-                return "P – Z"
-            case .noAuthor:
-                return "Unknown Author"
-            }
-        }
-    }
-    
     private let emptyStateView = EmptyStateView()
     
     private lazy var collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
-    private lazy var dataSource = createDataSource()
-    
-    private var books: [Book] = []
-    private var booksBySection: [Section: [Book]] = [:]
-    private var visibleSections: [Section] = []
+    private lazy var dataSource = SearchDataSource(collectionView: collectionView)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +31,9 @@ class SearchViewController: UIViewController {
         OpenLibraryClient().fetch(endpoint, into: Book.Response.self) { result in
             switch result {
             case .success(let response):
-                self.books = response.docs
+                self.dataSource.update(with: response.docs)
                 DispatchQueue.main.async {
-                    self.updateData()
+                    self.updateEmptyState()
                 }
                 
             case .failure(let error):
@@ -68,20 +44,8 @@ class SearchViewController: UIViewController {
         }
     }
     
-    private func updateData() {
-        computeSections()
-        
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Book>()
-        
-        for section in Section.allCases {
-            guard let books = booksBySection[section] else { continue }
-            snapshot.appendSections([section])
-            snapshot.appendItems(books, toSection: section)
-        }
-        
-        dataSource.apply(snapshot, animatingDifferences: true)
-        
-        let hasResults = !books.isEmpty
+    private func updateEmptyState() {
+        let hasResults = !dataSource.isEmpty
         if !hasResults {
             emptyStateView.update(with: .init(title: "No Results", message: "There are no results for your search."))
         }
@@ -90,8 +54,7 @@ class SearchViewController: UIViewController {
     
     private func resetToWelcomeState() {
         // remove results from screen
-        books = []
-        updateData()
+        dataSource.resetData()
         
         // animate back to the welcome screen
         let animations = {
@@ -100,51 +63,6 @@ class SearchViewController: UIViewController {
             self.emptyStateView.isHidden = false
         }
         UIView.transition(with: view, duration: 0.25, options: [.transitionCrossDissolve], animations: animations)
-    }
-    
-    private func computeSections() {
-        booksBySection = [:]
-        visibleSections = []
-        
-        for book in books {
-            var book = book
-            guard let authorNames = book.authorNames else {
-                var books = booksBySection[.noAuthor] ?? []
-                books.append(book)
-                booksBySection[.noAuthor] = books
-                continue
-            }
-            
-            // add the book to each authors' section
-            for author in authorNames {
-                #warning("TODO: improve parsing safety")
-                let lastname = author.split(separator: " ").last!
-                let firstLetter = lastname.first!.lowercased()
-                
-                let section: Section
-                if firstLetter < "g" {
-                    section = .a2f
-                }
-                else if firstLetter < "p" {
-                    section = .g2o
-                }
-                else {
-                    section = .p2z
-                }
-                
-                // trick to have the same book multiple times in different sections
-                book.copy += 1
-                
-                var books = booksBySection[section] ?? []
-                books.append(book)
-                booksBySection[section] = books
-            }
-        }
-        
-        for section in Section.allCases {
-            guard booksBySection[section] != nil else { continue }
-            visibleSections.append(section)
-        }
     }
     
     private func configureEmptyStateView() {
@@ -193,20 +111,6 @@ class SearchViewController: UIViewController {
         section.boundarySupplementaryItems = [headerItem]
         
         return UICollectionViewCompositionalLayout(section: section)
-    }
-    
-    private func createDataSource() -> UICollectionViewDiffableDataSource<Section, Book> {
-        let dataSource = UICollectionViewDiffableDataSource<Section, Book>(collectionView: collectionView, cellProvider: { collectionView, indexPath, book in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCoverCell.reuseIdentifier, for: indexPath) as! BookCoverCell
-            cell.update(with: .init(title: book.title, isbn: book.ISBNs?.first, authors: book.authorNames))
-            return cell
-        })
-        dataSource.supplementaryViewProvider = { [unowned self] collectionView, kind, indexPath in
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BookSearchHeaderView.reuseIdentifier, for: indexPath) as! BookSearchHeaderView
-            header.update(with: .init(title: self.visibleSections[indexPath.section].title))
-            return header
-        }
-        return dataSource
     }
     
     private func configureCollectionView() {

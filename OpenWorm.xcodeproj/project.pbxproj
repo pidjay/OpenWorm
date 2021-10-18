@@ -34,6 +34,7 @@
 		CD5DB8CD271D6C8600C15025 /* SecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8CC271D6C8600C15025 /* SecondaryTitleLabel.swift */; };
 		CD5DB8CF271D6D1700C15025 /* NSLayoutConstraint+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8CE271D6D1700C15025 /* NSLayoutConstraint+Ext.swift */; };
 		CD5DB8D1271D733600C15025 /* CoverEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8D0271D733600C15025 /* CoverEndpoint.swift */; };
+		CD5DB8D9271D7CC000C15025 /* SearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8D8271D7CC000C15025 /* SearchDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		CD5DB8CC271D6C8600C15025 /* SecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		CD5DB8CE271D6D1700C15025 /* NSLayoutConstraint+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Ext.swift"; sourceTree = "<group>"; };
 		CD5DB8D0271D733600C15025 /* CoverEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverEndpoint.swift; sourceTree = "<group>"; };
+		CD5DB8D8271D7CC000C15025 /* SearchDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				CD5DB8B2271CE6CD00C15025 /* Networking */,
 				CD5DB8B1271CE6A400C15025 /* Views */,
 				CD5DB8B0271CE69B00C15025 /* Screens */,
+				CD5DB8D7271D7CA300C15025 /* DataSources */,
 				CD5DB886271BF9A300C15025 /* AppDelegate.swift */,
 				CD5DB888271BF9A300C15025 /* SceneDelegate.swift */,
 				CD5DB88F271BF9A600C15025 /* Assets.xcassets */,
@@ -202,6 +205,14 @@
 			path = "Custom Views";
 			sourceTree = "<group>";
 		};
+		CD5DB8D7271D7CA300C15025 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				CD5DB8D8271D7CC000C15025 /* SearchDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,6 +292,7 @@
 				CD5DB8CF271D6D1700C15025 /* NSLayoutConstraint+Ext.swift in Sources */,
 				CD5DB8AB271CDB4700C15025 /* NetworkingError.swift in Sources */,
 				CD5DB8CD271D6C8600C15025 /* SecondaryTitleLabel.swift in Sources */,
+				CD5DB8D9271D7CC000C15025 /* SearchDataSource.swift in Sources */,
 				CD5DB8A1271CAFF500C15025 /* BodyLabel.swift in Sources */,
 				CD5DB8BB271CF22600C15025 /* BookCoverCell.swift in Sources */,
 				CD5DB89B271CA12400C15025 /* SearchViewController.swift in Sources */,
