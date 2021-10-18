@@ -57,7 +57,10 @@ class BookCoverCell: UICollectionViewCell {
         authorsLabel.translatesAutoresizingMaskIntoConstraints = false
         
         titleLabel.numberOfLines = 2
+        titleLabel.setContentCompressionResistancePriority(.defaultHigh + 1, for: .vertical)
+        
         authorsLabel.numberOfLines = 2
+        authorsLabel.setContentCompressionResistancePriority(.defaultHigh - 1, for: .vertical)
         
         NSLayoutConstraint.activate([
             coverImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
