@@ -82,7 +82,25 @@ class SearchViewController: UIViewController {
         
         dataSource.apply(snapshot, animatingDifferences: true)
         
-        emptyStateView.isHidden = !books.isEmpty
+        let hasResults = !books.isEmpty
+        if !hasResults {
+            emptyStateView.update(with: .init(title: "No Results", message: "There are no results for your search."))
+        }
+        emptyStateView.isHidden = hasResults
+    }
+    
+    private func resetToWelcomeState() {
+        // remove results from screen
+        books = []
+        updateData()
+        
+        // animate back to the welcome screen
+        let animations = {
+            let vm = self.welcomeStateViewModel()
+            self.emptyStateView.update(with: vm)
+            self.emptyStateView.isHidden = false
+        }
+        UIView.transition(with: view, duration: 0.25, options: [.transitionCrossDissolve], animations: animations)
     }
     
     private func computeSections() {
@@ -141,11 +159,7 @@ class SearchViewController: UIViewController {
             emptyStateView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         
-        let vm = EmptyStateView.ViewModel(
-            title: "Welcome to OpenWorm",
-            message: "Wormie is here to help you find books in the biggest library.\n\nStart your journey by tapping on the search bar."
-        )
-        emptyStateView.update(with: vm)
+        emptyStateView.update(with: welcomeStateViewModel())
     }
     
     private func configureSearchController() {
@@ -205,6 +219,13 @@ class SearchViewController: UIViewController {
         collectionView.register(BookCoverCell.self, forCellWithReuseIdentifier: BookCoverCell.reuseIdentifier)
         collectionView.register(BookSearchHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BookSearchHeaderView.reuseIdentifier)
     }
+    
+    private func welcomeStateViewModel() -> EmptyStateView.ViewModel {
+        EmptyStateView.ViewModel(
+            title: "Welcome to OpenWorm",
+            message: "Wormie is here to help you find books in the biggest library.\n\nStart your journey by tapping on the search bar."
+        )
+    }
 
 }
 
@@ -216,7 +237,6 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        books = []
-        updateData()
+        resetToWelcomeState()
     }
 }
