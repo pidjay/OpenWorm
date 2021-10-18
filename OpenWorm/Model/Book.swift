@@ -7,12 +7,16 @@
 
 import Foundation
 
-struct Book: Codable {
+struct Book: Codable, Hashable {
+    let key: String
     let title: String
     let authorNames: [String]?
     let ISBNs: [String]?
     
+    var copy = 0
+    
     enum CodingKeys: String, CodingKey {
+        case key
         case title
         case authorNames = "authorName"
         case ISBNs = "isbn"

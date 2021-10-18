@@ -22,6 +22,9 @@
 		CD5DB8AB271CDB4700C15025 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8AA271CDB4700C15025 /* NetworkingError.swift */; };
 		CD5DB8AD271CDEDE00C15025 /* SearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8AC271CDEDE00C15025 /* SearchEndpoint.swift */; };
 		CD5DB8AF271CE30000C15025 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8AE271CE30000C15025 /* UIViewController+Ext.swift */; };
+		CD5DB8BB271CF22600C15025 /* BookCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8BA271CF22600C15025 /* BookCoverCell.swift */; };
+		CD5DB8BD271CFDC200C15025 /* BookCoverImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8BC271CFDC200C15025 /* BookCoverImageView.swift */; };
+		CD5DB8BF271D0C7500C15025 /* BookSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8BE271D0C7500C15025 /* BookSearchHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		CD5DB8AA271CDB4700C15025 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		CD5DB8AC271CDEDE00C15025 /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
 		CD5DB8AE271CE30000C15025 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		CD5DB8BA271CF22600C15025 /* BookCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverCell.swift; sourceTree = "<group>"; };
+		CD5DB8BC271CFDC200C15025 /* BookCoverImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverImageView.swift; sourceTree = "<group>"; };
+		CD5DB8BE271D0C7500C15025 /* BookSearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,9 @@
 				CD5DB89C271CAAC000C15025 /* EmptyStateView.swift */,
 				CD5DB89E271CAEDE00C15025 /* TitleLabel.swift */,
 				CD5DB8A0271CAFF500C15025 /* BodyLabel.swift */,
+				CD5DB8BA271CF22600C15025 /* BookCoverCell.swift */,
+				CD5DB8BC271CFDC200C15025 /* BookCoverImageView.swift */,
+				CD5DB8BE271D0C7500C15025 /* BookSearchHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,8 +218,11 @@
 				CD5DB8AD271CDEDE00C15025 /* SearchEndpoint.swift in Sources */,
 				CD5DB8AB271CDB4700C15025 /* NetworkingError.swift in Sources */,
 				CD5DB8A1271CAFF500C15025 /* BodyLabel.swift in Sources */,
+				CD5DB8BB271CF22600C15025 /* BookCoverCell.swift in Sources */,
 				CD5DB89B271CA12400C15025 /* SearchViewController.swift in Sources */,
 				CD5DB887271BF9A300C15025 /* AppDelegate.swift in Sources */,
+				CD5DB8BD271CFDC200C15025 /* BookCoverImageView.swift in Sources */,
+				CD5DB8BF271D0C7500C15025 /* BookSearchHeaderView.swift in Sources */,
 				CD5DB8A7271CDAF700C15025 /* APIEndPoint.swift in Sources */,
 				CD5DB89D271CAAC000C15025 /* EmptyStateView.swift in Sources */,
 				CD5DB89F271CAEDE00C15025 /* TitleLabel.swift in Sources */,
