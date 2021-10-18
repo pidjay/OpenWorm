@@ -10,11 +10,16 @@ import Foundation
 protocol APIEndPoint {
     var path: String { get }
     var queryItems: [URLQueryItem]? { get }
+    var baseURL: String { get }
+}
+
+extension APIEndPoint {
+    var baseURL: String { APIConstant.baseURL }
 }
 
 extension APIEndPoint {
     var url: URL? {
-        guard var components = URLComponents(string: APIConstant.baseURL) else { return nil }
+        guard var components = URLComponents(string: baseURL) else { return nil }
         components.path = path
         components.queryItems = queryItems
         return components.url
