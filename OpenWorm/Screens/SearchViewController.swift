@@ -147,4 +147,9 @@ extension SearchViewController: UISearchBarDelegate {
         guard let query = searchBar.text else { return }
         searchBook(query)
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        books = []
+        updateData()
+    }
 }
