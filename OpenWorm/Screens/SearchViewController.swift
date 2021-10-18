@@ -9,9 +9,16 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    enum Section {
+        case a2f
+        case g2o
+        case p2z
+    }
+    
     private let emptyStateView = EmptyStateView()
     
     private lazy var collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
+    private lazy var dataSource = createDataSource()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,9 +100,24 @@ class SearchViewController: UIViewController {
         return UICollectionViewCompositionalLayout(section: section)
     }
     
+    private func createDataSource() -> UICollectionViewDiffableDataSource<Section, Book> {
+        let dataSource = UICollectionViewDiffableDataSource<Section, Book>(collectionView: collectionView, cellProvider: { collectionView, indexPath, book in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCoverCell.reuseIdentifier, for: indexPath) as! BookCoverCell
+            cell.update(with: .init(title: book.title))
+            return cell
+        })
+        dataSource.supplementaryViewProvider = { collectionView, kind, indexPath in
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BookSearchHeaderView.reuseIdentifier, for: indexPath) as! BookSearchHeaderView
+            header.update(with: .init(title: "Section \(indexPath.section + 1)"))
+            return header
+        }
+        return dataSource
+    }
+    
     private func configureCollectionView() {
         view.addSubview(collectionView)
         
+        collectionView.dataSource = dataSource
         collectionView.register(BookCoverCell.self, forCellWithReuseIdentifier: BookCoverCell.reuseIdentifier)
         collectionView.register(BookSearchHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BookSearchHeaderView.reuseIdentifier)
     }
