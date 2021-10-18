@@ -85,6 +85,7 @@ class SearchViewController: UIViewController {
         let searchController = UISearchController()
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Search for books..."
+        searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
     }
     
