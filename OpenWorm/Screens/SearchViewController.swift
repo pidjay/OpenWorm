@@ -44,7 +44,6 @@ class SearchViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         #warning("TODO: loading state")
-        #warning("TODO: empty state when no content")
         
         configureCollectionView()
         configureEmptyStateView()
