@@ -25,6 +25,7 @@
 		CD5DB8BB271CF22600C15025 /* BookCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8BA271CF22600C15025 /* BookCoverCell.swift */; };
 		CD5DB8BD271CFDC200C15025 /* BookCoverImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8BC271CFDC200C15025 /* BookCoverImageView.swift */; };
 		CD5DB8BF271D0C7500C15025 /* BookSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8BE271D0C7500C15025 /* BookSearchHeaderView.swift */; };
+		CD5DB8C1271D3E6C00C15025 /* CaptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DB8C0271D3E6C00C15025 /* CaptionLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		CD5DB8BA271CF22600C15025 /* BookCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverCell.swift; sourceTree = "<group>"; };
 		CD5DB8BC271CFDC200C15025 /* BookCoverImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverImageView.swift; sourceTree = "<group>"; };
 		CD5DB8BE271D0C7500C15025 /* BookSearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchHeaderView.swift; sourceTree = "<group>"; };
+		CD5DB8C0271D3E6C00C15025 /* CaptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				CD5DB89C271CAAC000C15025 /* EmptyStateView.swift */,
 				CD5DB89E271CAEDE00C15025 /* TitleLabel.swift */,
 				CD5DB8A0271CAFF500C15025 /* BodyLabel.swift */,
+				CD5DB8C0271D3E6C00C15025 /* CaptionLabel.swift */,
 				CD5DB8BA271CF22600C15025 /* BookCoverCell.swift */,
 				CD5DB8BC271CFDC200C15025 /* BookCoverImageView.swift */,
 				CD5DB8BE271D0C7500C15025 /* BookSearchHeaderView.swift */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD5DB8C1271D3E6C00C15025 /* CaptionLabel.swift in Sources */,
 				CD5DB8A5271CD9ED00C15025 /* Book.swift in Sources */,
 				CD5DB8AF271CE30000C15025 /* UIViewController+Ext.swift in Sources */,
 				CD5DB8A3271CC8B800C15025 /* OpenLibraryClient.swift in Sources */,
