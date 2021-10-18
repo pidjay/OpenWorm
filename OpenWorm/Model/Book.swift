@@ -13,6 +13,8 @@ struct Book: Codable, Hashable {
     let authorNames: [String]?
     let ISBNs: [String]?
     
+    var copy = 0
+    
     enum CodingKeys: String, CodingKey {
         case key
         case title
