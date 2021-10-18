@@ -19,6 +19,8 @@ class SearchViewController: UIViewController {
     
     private lazy var collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
     private lazy var dataSource = createDataSource()
+    
+    private var books: [Book] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,10 @@ class SearchViewController: UIViewController {
         OpenLibraryClient().fetch(endpoint, into: Book.Response.self) { result in
             switch result {
             case .success(let response):
-                print(response.docs)
+                self.books = response.docs
+                DispatchQueue.main.async {
+                    self.updateData()
+                }
                 
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -47,6 +52,15 @@ class SearchViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func updateData() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Book>()
+        snapshot.appendSections([.a2f])
+        snapshot.appendItems(books, toSection: .a2f)
+        dataSource.apply(snapshot, animatingDifferences: true)
+        
+        emptyStateView.isHidden = !books.isEmpty
     }
     
     private func configureEmptyStateView() {
