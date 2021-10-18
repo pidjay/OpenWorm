@@ -30,6 +30,11 @@ class BookDetailHeaderView: UIView {
         var editionName: String? {
             detail.editionName
         }
+        
+        var authors: String? {
+            #warning("TODO: need to be implemented after `BookDetail` got the authors figured out")
+            return nil
+        }
     }
     
     private let coverImageView = BookCoverImageView()
@@ -54,7 +59,10 @@ class BookDetailHeaderView: UIView {
         coverImageView.setImage(with: vm.coverURL)
         titleLabel.text = vm.bookTitle
         editionNameLabel.text = vm.editionName
-        authorsLabel.text = ""
+        authorsLabel.text = vm.authors
+        
+        editionNameLabel.isHidden = vm.editionName == nil
+        authorsLabel.isHidden = vm.authors == nil
     }
     
     override func layoutSubviews() {
